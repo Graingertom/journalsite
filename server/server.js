@@ -4,8 +4,8 @@ const cors = require('cors');
 
 app.use(cors());
 
-const appRoutes = require("./controller/journalController")
-app.use('/data', appRoutes)
+const journalRoutes = require("./controller/journalController")
+app.use('/data', journalRoutes)
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
