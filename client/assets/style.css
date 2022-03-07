@@ -1,0 +1,20 @@
+article {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-template-columns: 100%;
+    height: 50vh;
+    margin: 6rem;
+    background-color: grey;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.textContent {
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.addComment {
+    width: 60vw;
+}
