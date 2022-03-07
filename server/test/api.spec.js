@@ -5,13 +5,10 @@ const server = require('../server');
 describe('API server', () => {
     let api;
     let testPost = {
-        title: 'title',
-        body: 6,
-        image: ""
-    };
-
-    let testComment = {
-        message: ""
+        title: 'new',
+        body: "new",
+        image: "new",
+        comments: ["new"]
     };
 
     beforeAll(() => {
@@ -43,21 +40,21 @@ describe('API server', () => {
         request(api).get('/data/1/comments').expect(200, done);
     });
 
-    // it('responds to post /data with status 201', (done) => {
-    //     request(api)
-    //         .post('/data')
-    //         .send(testData)
-    //         .set('Accept', /application\/json/)
-    //         .expect(201)
-    //         .expect({ id: 1, ...testData }, done);
-    // });
+    it('responds to post /data with status 201', (done) => {
+        request(api)
+            .post('/data')
+            .send(testPost)
+            .set('Accept', /application\/json/)
+            .expect(201)
+            .expect({ id: 14, ...testPost }, done);
+    });
 
-    // it('retrieves a post by id', (done) => {
-    //     request(api)
-    //         .get('/data/3')
-    //         .expect(200)
-    //         .expect({ title: 'title', body: 'message', image: "" }, done);
-    // });
+    it('retrieves a post by id', (done) => {
+        request(api)
+            .get('/data/3')
+            .expect(200)
+            .expect({id: 3, title: 'title', body: 'This is the contents for the message', image: '', comments: []}, done);
+    });
 
     it('responds to a unknown post id with a 404', (done) => {
         request(api).get('/data/42').expect(404).expect({}, done);
@@ -67,8 +64,8 @@ describe('API server', () => {
         request(api).get('/cats').expect(404, done);
     });
 
-    // it('responds to invalid method request with 405', (done) => {
-    //     request(api).post('/').expect(405, done);
-    // });
+    it('responds to invalid method request with 405', (done) => {
+        request(api).post('/').expect(405, done);
+    });
 
 })

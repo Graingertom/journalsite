@@ -32,4 +32,10 @@ router.get('/:id/comments', (req, res) => {
     }
 });
 
+router.post("/", (req, res) => {
+    const data = req.body;
+    const newPost = Journal.create(data);
+    res.status(201).send(newPost);
+})
+
 module.exports = router;

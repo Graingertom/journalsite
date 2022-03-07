@@ -29,6 +29,13 @@ class Journal {
         }
     }
 
+    static create(data) {
+        const newPostID = journalData.length + 1;
+        const newPost = new Journal({ id: newPostID, ...data });
+        journalData.push(newPost);
+        return newPost;
+    }
+
 }
 
 module.exports = Journal;
