@@ -36,11 +36,11 @@ describe('API server', () => {
     });
 
     it('responds to get /data/:id with status 200', (done) => {
-        request(api).get('/data/:id').expect(200, done);
+        request(api).get('/data/1').expect(200, done);
     });
 
     it('responds to get /data/:id/comments with status 200', (done) => {
-        request(api).get('/data/:id/comments').expect(200, done);
+        request(api).get('/data/1/comments').expect(200, done);
     });
 
     // it('responds to post /data with status 201', (done) => {

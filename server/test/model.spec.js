@@ -22,7 +22,7 @@ describe('Model Testing', () => {
     });
 
     it('should return all journal posts', () => {
-        const journal = Journal.getAll;
+        const journal = Journal.All;
 
         expect(journal).toEqual(journalData);
     });
