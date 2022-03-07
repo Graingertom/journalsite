@@ -1,20 +1,45 @@
-article {
+.posts {
     display: grid;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: 1fr 3fr 1fr 1fr;
     grid-template-columns: 100%;
     height: 50vh;
     margin: 6rem;
     background-color: grey;
-    align-items: center;
+    /* align-items: center;
     justify-items: center;
-    justify-content: center;
+    justify-content: center; */
+}
+
+h3 {
+    text-align: center;
+    font-size: 16px;
+}
+
+.postTitle {
+    margin-top: 1em;
+    margin-left: 5vw;
 }
 
 .textContent {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 2fr;
+    margin-left: 5vw;
 }
 
 .addComment {
     width: 60vw;
+    margin: 1em;
 }
+
+#form {
+    text-align: center;
+}
+
+#newPost {
+    margin: 3em;
+}
+
+.interactiveComments {
+    text-align: center;
+}
+

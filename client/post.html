@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/style.css">
     <script src="assets/script.js" defer></script>
     <!-- Add Favicon -->
-    <title>Coding Cats</title>
+    <title>Post</title>
 </head>
 <body>
     <header class="p-3 bg-dark text-white">
@@ -24,36 +24,28 @@
             </ul> -->
             
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mx-auto justify-content-center mb-md-0">
-                <li><a href="#" class="nav-link px-2 text-white">Coding Cats</a></li>
+                <li><a href="index.html" class="nav-link px-2 text-white">Coding Cats</a></li>
             </ul>
 
             <div class="text-end">
-              <a href="post.html"><button type="button" class="btn btn-warning">New Post</button></a>
+              <button type="button" class="btn btn-warning">New Post</button>
             </div>
           </div>
         </div>
     </header>
 
-    <article class="posts"> 
-        <h2 class="postTitle">Title</h2>
 
-        <section class="textContent">
-            <p>Image should be here</p>
-            <p>Body</p>
 
-        </section>
-
-        <section class="interactiveComments">
-            <form id="form">
-                <input type="text" class="addComment" name="message" id="message" placeholder="Add your comment" />
-                <input type="button" name="" value=":)" onclick="check()">
-                <input type="button" name="" value=":(" onclick="check()">
-                <input type="button" name="" value=":O" onclick="check()">
+    <article>
+        <section>
+            <h1>Add your Post</h1>
+            <form id="newPost">
+                <input type="text" class="addComment" name="message" id="message" placeholder="Add your Title" />
+                <textarea cols="50" rows="10" class="addComment" name="message" id="message" placeholder="Add your comment" ></textarea>
                 <input type="submit" name="submit" value="Comment">
             </form>
         </section>
 
-        <h3>View Comments</h3>
     </article>
 
     <footer>
