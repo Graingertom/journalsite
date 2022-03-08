@@ -20,12 +20,24 @@ function displayGifs(e) {
             const fillThis = document.getElementById("inner");
             const img = document.createElement("img")
             const imgUrl = result.images.downsized.url
+            const imgId = result.id
             img.src = imgUrl
+            img.id = imgId
             fillThis.appendChild(img)
+
+            img.addEventListener('click', selectGif)
+
+        
+            function selectGif(e) {
+                e.preventDefault()
+                e.target.style.border = "5px solid blue"
+            }
         }
+
     })
     .catch(console.warn)
-
-
 }
+
+
+
 
