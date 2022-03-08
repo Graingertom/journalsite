@@ -1,4 +1,5 @@
 const findGif = document.getElementById('searchForm')
+let selectedImg = document.getElementById("selectedImg")
 
 findGif.addEventListener('submit', displayGifs)
 
@@ -30,7 +31,8 @@ function displayGifs(e) {
         
             function selectGif(e) {
                 e.preventDefault()
-                e.target.style.border = "5px solid blue"
+                console.log(e)
+                selectedImg.src = e.target.currentSrc
             }
         }
 

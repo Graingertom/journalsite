@@ -21,9 +21,9 @@ function submitForm (e) {
         }
     };
 
-    console.log(options)
+    console.log(options.body)
 
     fetch('http://localhost:3000/data', options)
-        .then(r => r.json())
+        .then(r => console.log(r.json()))
         .catch(console.warn)
 }
