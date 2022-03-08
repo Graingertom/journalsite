@@ -1,24 +1,26 @@
 
 
-document.getElementsByClassName("btn btn-warning").addEventListener("submit", event => {    //maybe we should change button class name
+document.addEventListener("DOMContentLoaded", fill)    
                                                                                             //unsure if this is correct
-
+function fill() {
 fetch('http://localhost:3000/data')
     .then( (response) => {
         return response.json()
     })
     .then( (data) => {
         document.getElementById("toShow").innerHTML = ""
+        fillPost(data)
     })
 
 
 
-})
+}
 
 
 
 
-// put results from database into hompage - unsure how to link
+
+// put results from database into homepage - unsure how to link
 
 const fillPost = data => {
 
