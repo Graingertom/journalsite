@@ -59,9 +59,13 @@ const fillPost = data => {
         
         commentText.className = "addComment"
         button1.type = "button"
+        button1.className = "button"
         button2.type = "button"
+        button2.className = "button"
         button3.type = "button"
+        button3.className = "button"
         submitBtn.type = "submit"
+        submitBtn.className ="submitBtn"
 
 
 
