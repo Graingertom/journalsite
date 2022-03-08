@@ -37,23 +37,26 @@ const fillPost = data => {
         const h2 = document.createElement("h2");
         //const img = document.createElement("img");    // This path needs to be for the gif ?? not part of the p?
         const p = document.createElement("p");
+        const section = document.createElement("section")
         const form = document.createElement("form")
         const commentText = document.createElement("input")
         const button1 = document.createElement("input")
         const button2 = document.createElement("input")
         const button3 = document.createElement("input")
-        const submitBtn = document.createElement("input")                            // Path to create comment section ??
+        const submitBtn = document.createElement("input")
         const h3 = document.createElement("h3") //to change
         const body = document.querySelector("body")
 
         const postTitle = document.createTextNode(`${entry.title}`);
         const textContent = document.createTextNode(`${entry.body}`);
         const comments = document.createTextNode("View Comments");
+        // or add gif choice here?
 
-        
         article.className = "posts"
         h2.className = "postTitle"
         p.className = "textContent"
+        section.className = "interactiveComments"
+        
         commentText.className = "addComment"
         button1.type = "button"
         button2.type = "button"
@@ -62,7 +65,6 @@ const fillPost = data => {
 
 
 
-        form.id = form
         commentText.type = "text"
         commentText.class = "addComment"
         commentText.name = "message"
@@ -82,18 +84,21 @@ const fillPost = data => {
         // //img.appendChild() Surely the Gif is part of the text content ??
         p.appendChild(textContent)
         h3.appendChild(comments) //to change
+        section.appendChild(form)
         form.appendChild(commentText)
         form.appendChild(button1)
         form.appendChild(button2)
         form.appendChild(button3)
         form.appendChild(submitBtn)
-     
+
+
 
 
         article.appendChild(h2)
         article.appendChild(p)
-        article.appendChild(form)
+        article.appendChild(section)
         article.appendChild(h3)
+
     }
 }
 
