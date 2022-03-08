@@ -43,3 +43,11 @@ h3 {
     text-align: center;
 }
 
+.button {
+    margin: 5px;
+    
+}
+
+.submitBtn {
+    margin: 5px 20px;
+}
