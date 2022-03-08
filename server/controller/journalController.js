@@ -36,6 +36,19 @@ router.post("/", (req, res) => {
     const data = req.body;
     const newPost = Journal.create(data);
     res.status(201).send(newPost);
-})
+});
+
+router.post("/:id/comments", (req, res) => {
+    const data = req.body;
+    const id = parseInt(req.params.id);
+    
+    const selectedPost = Journal.findById(id);
+        
+    for (const comment in data) {
+        const element = data[comment];
+        selectedPost.comments.push(element);
+    }
+    res.status(201).send(selectedPost.comments);
+});
 
 module.exports = router;

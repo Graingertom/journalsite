@@ -36,6 +36,11 @@ class Journal {
         return newPost;
     }
 
+    // static createComment(data) {
+    //     const post = journalData.comments.push(data)
+    //     return post;
+    // }
+
 }
 
 module.exports = Journal;
