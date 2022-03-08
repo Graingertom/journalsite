@@ -36,6 +36,10 @@ class Journal {
         return newPost;
     }
 
+    static comment(data) {
+       return journalData.comments.push(data)
+    }
+
 }
 
 module.exports = Journal;

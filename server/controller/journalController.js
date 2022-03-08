@@ -38,4 +38,10 @@ router.post("/", (req, res) => {
     res.status(201).send(newPost);
 })
 
+router.post("/:id/comments", (req, res) => {
+    const data = req.body;
+    const newComment = Journal.comment(data)
+    res.status(201).send(newComment)
+})
+
 module.exports = router;
