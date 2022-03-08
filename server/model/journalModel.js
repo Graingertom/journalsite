@@ -36,10 +36,15 @@ class Journal {
         return newPost;
     }
 
-    // static createComment(data) {
-    //     const post = journalData.comments.push(data)
-    //     return post;
-    // }
+    static createComment(id, data) {
+        const postID = journalData.find(postData => postData.id === id);
+        const post = new Journal(postID);
+        console.log("Data is: " + data);
+        console.log(JSON.stringify(data));
+        journalData[id - 1].comments.push(data.comments);
+        console.log(journalData);
+        return post;
+    }
 
 }
 

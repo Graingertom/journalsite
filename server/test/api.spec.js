@@ -10,7 +10,7 @@ describe('API server', () => {
         image: "new",
         comments: ["new"]
     };
-    let testComment = ["Adding Comment"];
+    let testComment = {comments: "Adding Comment"};
 
     beforeAll(() => {
         // start the server and store it in the api variable
