@@ -37,7 +37,9 @@ const fillPost = data => {
         const h2 = document.createElement("h2");
         //const img = document.createElement("img");    // This path needs to be for the gif ?? not part of the p?
         const p = document.createElement("p");
-        const section = document.createElement("section")
+        const pImg = document.createElement("p")
+        const section1 = document.createElement("section")
+        const section2 = document.createElement("section")
         const form = document.createElement("form")
         const commentText = document.createElement("input")
         const button1 = document.createElement("input")
@@ -50,12 +52,13 @@ const fillPost = data => {
         const postTitle = document.createTextNode(`${entry.title}`);
         const textContent = document.createTextNode(`${entry.body}`);
         const comments = document.createTextNode("View Comments");
+        const imageContent = document.createTextNode("Image should be here")
         // or add gif choice here?
 
         article.className = "posts"
         h2.className = "postTitle"
-        p.className = "textContent"
-        section.className = "interactiveComments"
+        section1.className = "textContent"
+        section2.className = "interactiveComments"
         
         commentText.className = "addComment"
         button1.type = "button"
@@ -86,9 +89,12 @@ const fillPost = data => {
         body.appendChild(article)
         h2.appendChild(postTitle);
         // //img.appendChild() Surely the Gif is part of the text content ??
+        section1.appendChild(pImg)
+        section1.appendChild(p)
         p.appendChild(textContent)
+        pImg.appendChild(imageContent)
         h3.appendChild(comments) //to change
-        section.appendChild(form)
+        section2.appendChild(form)
         form.appendChild(commentText)
         form.appendChild(button1)
         form.appendChild(button2)
@@ -99,8 +105,8 @@ const fillPost = data => {
 
 
         article.appendChild(h2)
-        article.appendChild(p)
-        article.appendChild(section)
+        article.appendChild(section1)
+        article.appendChild(section2)
         article.appendChild(h3)
 
     }
