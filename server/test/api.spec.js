@@ -10,6 +10,7 @@ describe('API server', () => {
         image: "new",
         comments: ["new"]
     };
+    let testComment = {comments: "Adding Comment"};
 
     beforeAll(() => {
         // start the server and store it in the api variable
@@ -53,7 +54,16 @@ describe('API server', () => {
         request(api)
             .get('/data/3')
             .expect(200)
-            .expect({id: 3, title: 'title', body: 'This is the contents for the message', image: '', comments: []}, done);
+            .expect({id: 3, title: 'title', body: 'This is the contents for the message', image: '', comments: ['message 4', 'message 5']}, done);
+    });
+
+    it('responds to post /data/3/comments with status 201', (done) => {
+        request(api)
+            .post('/data/3/comments')
+            .send(testComment)
+            .set('Accept', /application\/json/)
+            .expect(201)
+            .expect(["message 4", "message 5", "Adding Comment"], done);
     });
 
     it('responds to a unknown post id with a 404', (done) => {

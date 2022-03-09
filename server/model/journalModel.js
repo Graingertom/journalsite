@@ -39,6 +39,15 @@ class Journal {
         return newPost;
     }
 
+
+    static createComment(id, data) {
+        const postID = journalData.find(postData => postData.id === id);
+        const post = new Journal(postID);
+        journalData[id - 1].comments.push(data.comments);
+        console.log(journalData);
+        return post;
+    }
+
 }
 
 module.exports = Journal;

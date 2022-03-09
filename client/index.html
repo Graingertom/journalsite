@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -60,13 +61,28 @@
           <button class="button" id="button3" name="" value="0">:O</button>
           <!-- <input type="button" class="button" id="button2" name="" value=":(" onclick="check()">
           <input type="button" class="button" id="button3" name="" value=":O" onclick="check()"> -->
+
         </div>
         <input type="submit" class="submitBtn" name="submit" value="Comment">
       </form>
     </section>
 
-    <h3>View Comments</h3>
-  </article>
+
+    <header class="header">
+        <div class="content">
+            <h1 class="heading">
+                <span class="small">Welcome to the</span>
+                <span class="no-fill">Coding Cats</span>
+                <span class="small">blogpage!</span>
+            </h1>
+            <a href="post.html" class="btn btn2">write a post</a>
+        </div>
+    </header>
+
+    <article class="posts">
+
+        <h2 class="postTitle">Title</h2>
+
 
 
   <!-- New post entries added to homepage -->
@@ -75,14 +91,28 @@
     <div class="postContent">
       <section id="toShow">
 
-      </section>
-    </div>
-    </section>
-  </article>
+
+        <div class="d-grid gap-4 col-3 mx-auto">
+            <button id="viewComments" class="btn btn2 btn-dark viewComs" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                View comments
+            </button>
+        </div>
+        <div class="commentSection" class="collapse" id="collapseExample">
+            <!-- Adds comments to this div class -->
+        </div>
+    </article>
+
 
   <footer>
 
-  </footer>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"
+        defer></script>
 </body>
 
+
 </html>
+
