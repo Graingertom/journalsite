@@ -43,6 +43,16 @@ h3 {
     text-align: center;
 }
 
+
+.button {
+    margin: 5px;
+    
+}
+
+.submitBtn {
+    margin: 5px 20px;
+}
+
 .viewComs {
     margin-bottom: 10px;
 }
@@ -90,3 +100,4 @@ h3 {
     text-decoration: none;
     text-transform: capitalize;
 }
+
