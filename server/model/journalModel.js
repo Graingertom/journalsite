@@ -39,7 +39,6 @@ class Journal {
         return newPost;
     }
 
-
     static createComment(id, data) {
         const postID = journalData.find(postData => postData.id === id);
         const post = new Journal(postID);
