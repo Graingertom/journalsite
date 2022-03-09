@@ -4,15 +4,10 @@
     grid-template-columns: 100%;
     height: 50vh;
     margin: 6rem;
-    background-color: grey;
+    background-color: rgba(201, 200, 200, 0.7);
     /* align-items: center;
     justify-items: center;
     justify-content: center; */
-}
-
-h3 {
-    text-align: center;
-    font-size: 16px;
 }
 
 .postTitle {
@@ -75,7 +70,6 @@ h3 {
 
 .heading{
     color: #fff;
-    text-transform: capitalize;
     font-size: 80px;
     line-height: 60px;
     margin-bottom: 80px;
@@ -95,7 +89,7 @@ h3 {
 .btn2{
     padding: 10px 20px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(201, 200, 200, 0.7);
     color: #000;
     text-decoration: none;
     text-transform: capitalize;
