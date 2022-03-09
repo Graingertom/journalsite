@@ -20,18 +20,9 @@
   <header class="p-3 bg-dark text-white">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <!-- <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-              <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-            </a>
-     -->
-        <!-- <ul class="nav col-4 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-              <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
-            </ul> -->
-
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mx-auto justify-content-center mb-md-0">
           <li><a href="index.html" class="nav-link px-2 text-white">Coding Cats</a></li>
         </ul>
-
         <div class="text-end">
           <button type="button" class="btn btn-warning">New Post</button>
         </div>
@@ -39,39 +30,37 @@
     </div>
   </header>
 
-
-
-    <article>
+    <article class="m-5">
         <section>
             <h1>Add your Post</h1>
-            <form id="newPost">
-                <img id="selectedImg" src="https://www.tattooforaweek.com/files/modules/products/4596/photos/detail_the-smiley-tattoonie.jpg?v=0">
-                <input type="text" class="addComment" name="message" id="title" placeholder="Add your Title..." />
-                <textarea cols="50" rows="10" class="addComment" name="body" id="message" placeholder="Write your post here..." ></textarea>
-                <input type="submit" name="submit" value="Post">
+            <img id="selectedImg" src="https://www.tattooforaweek.com/files/modules/products/4596/photos/detail_the-smiley-tattoonie.jpg?v=0" class="mt-1 mb-1">
+            
+            <form id="searchForm">
+                <div class="input-group mb-3">
+                    <input id="searchInput" type="text" class="form-control " placeholder="Search for a gifs"
+                           aria-label="Recipient's username"
+                           aria-describedby="button-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" id="searchButton">Search</button>
+                    </div>
+                </div>
             </form>
+            
+            <div class="loader-wrapper">
+                <div class="lds-circle"><div></div></div>
+            </div>
+            
+            <form id="newPost">
+                <!-- To be filled with GIPHY results -->
+                    <div id="inner"></div>
+                    <input type="text" class="addPost form-control" name="message" id="title" placeholder="Add your Title..." />
+                    <textarea cols="50" rows="10" class="addPost form-control" name="body" id="message" placeholder="Write your post here..." ></textarea>
+                    <input type="submit" class="btn btn-warning" name="submit" value="Post">
+            </form>
+        
+            
         </section>
 
-        <div class="container">
-          <form id="searchForm">
-              <div class="input-group mb-3">
-                  <input id="searchInput" type="text" class="form-control" placeholder="Search for a gifs"
-                         aria-label="Recipient's username"
-                         aria-describedby="button-addon2">
-                  <div class="input-group-append">
-                      <button class="btn btn-outline-secondary" id="searchButton">Search</button>
-                  </div>
-              </div>
-          </form>
-      
-          <div id="inner">
-      
-          </div>
-      
-      </div>
-      <div class="loader-wrapper">
-          <div class="lds-circle"><div></div></div>
-      </div>
 
     </article>
 

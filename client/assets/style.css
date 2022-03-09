@@ -21,23 +21,23 @@
     margin-left: 5vw;
 }
 
+/* need to change this in index */
 .addComment {
     width: 60vw;
-    margin: 1em;
+}
+
+.addPost {
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 #form {
     text-align: center;
 }
 
-#newPost {
-    margin: 3em;
-}
-
 .interactiveComments {
     text-align: center;
 }
-
 
 .button {
     margin: 5px;
@@ -93,5 +93,43 @@
     color: #000;
     text-decoration: none;
     text-transform: capitalize;
+}
+
+/* post.html changes */
+#postArticle{
+    margin: 3em;
+}
+
+#selectedImg{
+    width: 250px;
+    height: 200px;
+}
+
+#inner {
+    display: grid;
+    max-width: 1000px;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: auto auto;
+    text-align: center;
+}
+
+#inner > img {
+    object-fit: fill;
+    width: 200px;
+    max-height: 110px;
+    margin-bottom: 0.5em;
+    margin-right: 0.5em;
+    border: 1px solid black; 
+}
+
+#inner > img:hover { 
+    outline: 4px solid #f0ad4e; 
+} 
+
+@media (max-width: 55em) {
+    #inner {
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-columns: auto auto;   
+    }
 }
 
