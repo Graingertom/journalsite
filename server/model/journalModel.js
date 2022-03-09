@@ -8,6 +8,9 @@ class Journal {
         this.title = data.title;
         this.body = data.body; 
         this.image = data.image;
+        this.button1 = data.button1
+        this.button2 = data.button2
+        this.button3 = data.button3
         this.comments = data.comments
     }
 
