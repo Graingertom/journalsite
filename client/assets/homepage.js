@@ -45,7 +45,9 @@ const fillPost = data => {
         const button2 = document.createElement("input")
         const button3 = document.createElement("input")
         const submitBtn = document.createElement("input")
-        const h3 = document.createElement("h3") //to change
+        //const h3 = document.createElement("h3") //to change
+        const div = document.createElement("div")
+        const commentBtn = document.createElement("button")
         const body = document.querySelector("body")
 
         const postTitle = document.createTextNode(`${entry.title}`);
@@ -58,6 +60,18 @@ const fillPost = data => {
         h2.className = "postTitle"
         section1.className = "textContent"
         section2.className = "interactiveComments"
+
+        div.className = "d-grid gap-4 col-3 mx-auto"
+
+        commentBtn.id = "viewComments"
+        commentBtn.className = "btn btn2 btn-dark viewComs"
+        commentBtn.type = "button"
+        commentBtn.setAttribute('data-bs-toggle', "collapse")
+        commentBtn.setAttribute('data-bs-target', "#collapseExample")
+        commentBtn.setAttribute('aria-expanded', "false")
+        commentBtn.setAttribute('aria-controls', "collapseExample")
+        
+        
         
         commentText.className = "addComment"
         button1.type = "button"
@@ -92,13 +106,14 @@ const fillPost = data => {
         section1.appendChild(p)
         p.appendChild(textContent)
         pImg.appendChild(imageContent)
-        h3.appendChild(comments) //to change
+        commentBtn.appendChild(comments) //to change
         section2.appendChild(form)
         form.appendChild(commentText)
         form.appendChild(button1)
         form.appendChild(button2)
         form.appendChild(button3)
         form.appendChild(submitBtn)
+        div.appendChild(commentBtn)
 
 
 
@@ -106,7 +121,7 @@ const fillPost = data => {
         article.appendChild(h2)
         article.appendChild(section1)
         article.appendChild(section2)
-        article.appendChild(h3)
+        article.appendChild(div)
 
     }
 }
