@@ -46,7 +46,7 @@ function addingComment(e, id){
     id = 3;
 
     fetch(`http://localhost:3000/data/${id}/comments`, options)
-    .then(res => console.log(res.json()))
+    .then(res => res.json())
     .catch(console.warn);
 }
 
