@@ -30,7 +30,7 @@ const fillPost = data => {
         const h2 = document.createElement("h2");
         //const img = document.createElement("img");    // This path needs to be for the gif ?? not part of the p?
         const p = document.createElement("p");
-        const pImg = document.createElement("p")
+        const img = document.createElement("img")
         const section1 = document.createElement("section")
         const section2 = document.createElement("section")
         const form = document.createElement("form")
@@ -45,6 +45,7 @@ const fillPost = data => {
         //const h3 = document.createElement("h3") //to change
         const div = document.createElement("div")
         const commentBtn = document.createElement("button")
+        const commentSction = document.createElement("div")
         const body = document.querySelector("body")
 
         const button1Number = document.createTextNode(`${entry.button1}`)
@@ -53,7 +54,6 @@ const fillPost = data => {
         const postTitle = document.createTextNode(`${entry.title}`);
         const textContent = document.createTextNode(`${entry.body}`);
         const comments = document.createTextNode("View Comments");
-        const imageContent = document.createTextNode("Image should be here")
         // or add gif choice here?
 
         article.className = "posts"
@@ -63,8 +63,11 @@ const fillPost = data => {
 
         div.className = "d-grid gap-4 col-3 mx-auto"
 
-        commentBtn.id = "viewComments"
-        commentBtn.className = "btn btn2 btn-dark viewComs"
+        commentSction.id = `${entry.id} + commentSection`
+        commentBtn.id = `${entry.id}`
+        form.id = `${entry.id} + form`
+        img.id = `${entry.id} + image`
+        commentBtn.className = "btn btn2 btn-dark viewComs viewComments"
         commentBtn.type = "button"
         commentBtn.setAttribute('data-bs-toggle', "collapse")
         commentBtn.setAttribute('data-bs-target', "#collapseExample")
@@ -109,10 +112,9 @@ const fillPost = data => {
         body.appendChild(article)
         h2.appendChild(postTitle);
         // //img.appendChild() Surely the Gif is part of the text content ??
-        section1.appendChild(pImg)
+        section1.appendChild(img)
         section1.appendChild(p)
         p.appendChild(textContent)
-        pImg.appendChild(imageContent)
         commentBtn.appendChild(comments) //to change
         section2.appendChild(form)
         form.appendChild(commentText)
@@ -127,6 +129,8 @@ const fillPost = data => {
         button3Text.appendChild(button3Number)
         form.appendChild(submitBtn)
         div.appendChild(commentBtn)
+        div.appendChild(commentSction)
+        img.src = `${entry.image}`
 
 
 
@@ -138,6 +142,7 @@ const fillPost = data => {
 
     }
 }
+
 
 const events = data => {
 
@@ -179,63 +184,65 @@ const events = data => {
 }
 }
 
-// const viewComments = document.querySelector('#viewComments');
-// const newComment = document.querySelector('#form');
-// const commentSection = document.querySelector('.commentSection');
 
-// viewComments.addEventListener('click', searchResults);
-// newComment.addEventListener('submit', addingComment);
+const events = data => {
 
-// function searchResults(e, id){
-//     commentSection.innerHTML = ""
-//     e.preventDefault();
-//     id = articleID;
-//     // const classes = ['card', 'card-body'];
-//     // element.classList.add(...list);
-//     fetch(`http://localhost:3000/data/${id}/comments`)
-//         .then(res => res.json())
-//         .then(res => {
-//             for (const comment in res) {
-//                 const element = res[comment];
-//                 let addComments = document.createElement('div');
-//                 addComments.classList.add('card', 'card-body');
-//                 addComments.textContent = element;
-//                 commentSection.appendChild(addComments);
-//             }
-//         });
-// };
+    for (let entry of data) {
+    let viewComments = document.getElementById(`${entry.id}`)
+    viewComments.addEventListener('click', searchResults)
 
-// function addingComment(e, id){
-//     e.preventDefault();
+    let newComment = document.getElementById(`${entry.id} + form`);
+    newComment.addEventListener('submit', addingComment);
+    
 
-//     const comment = {
-//         comments: e.target.message.value
-//     };
+    function searchResults(e, id){
+        id = entry.id
+        let commentSection = document.getElementById(`${id} + commentSection`)
+        e.preventDefault();
+        commentSection.innerHTML = ""
+        // const classes = ['card', 'card-body'];
+        // element.classList.add(...list);
+        fetch(`http://localhost:3000/data/${id}/comments`)
+            .then(res => res.json())
+            .then(res => {
+                for (const comment in res) {
+                    const element = res[comment];
+                    let addComments = document.createElement('div');
+                    addComments.classList.add('card', 'card-body');
+                    addComments.textContent = element;
+                    commentSection.appendChild(addComments);
+                }
+            });
+    };
 
-//     console.log(comment)
-
-//     const options = {
-//         method: 'POST',
-//         body: JSON.stringify(comment),
-//         headers: {
-//             "Content-Type" : "application/json"
-//         }
-//     };
-
-//     console.log(options.body);
-
-//     id = articleID;
-
-//     fetch(`http://localhost:3000/data/${id}/comments`, options)
-//     .then(res => console.log(res.json()))
-//     .catch(console.warn);
-// }
-
-
-
-
-
-
+    function addingComment(e, id){
+        id = entry.id
+        e.preventDefault();
+    
+        const comment = {
+            comments: e.target.message.value
+        }
+    
+        console.log(comment)
+    
+        const options = {
+            method: 'POST',
+            body: JSON.stringify(comment),
+            headers: {
+                "Content-Type" : "application/json"
+            }
+        }
+    
+        console.log(options.body);
+    
+        
+        
+        fetch(`http://localhost:3000/data/${id}/comments`, options)
+        .then(res => res.json())
+        .catch(console.warn);
+    }
+}
+}
 
 
 // // emoji like counter
