@@ -1,4 +1,3 @@
-
 // const newComment = document.querySelector('#form');
 // const commentSection = document.querySelector('.commentSection');
 

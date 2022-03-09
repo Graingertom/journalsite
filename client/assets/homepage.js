@@ -1,4 +1,4 @@
-
+let articleID;
 
 //pulls from database
 document.addEventListener("DOMContentLoaded", fill);
@@ -22,15 +22,12 @@ function fill() {
 
 }
 
-
-
-
-
 // put results from database into homepage 
 
 const fillPost = data => {
-
+ 
     for (let entry of data) {
+        articleID = entry.id;
 
         const article = document.createElement("article")
         // const section = document.getElementById("toShow");
@@ -131,6 +128,7 @@ const fillPost = data => {
     }
 }
 
+
 const events = data => {
 
     for (let entry of data) {
@@ -189,8 +187,6 @@ const events = data => {
     }
 }
 }
-
-
 
 // // emoji like counter
 
