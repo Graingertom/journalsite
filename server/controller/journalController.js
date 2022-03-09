@@ -45,10 +45,4 @@ router.post("/:id/comments", (req, res) => {
     res.status(201).send(newSelectedPost.comments);
 });
 
-router.post("/:id/comments", (req, res) => {
-    const data = req.body;
-    const newComment = Journal.comment(data)
-    res.status(201).send(newComment)
-})
-
 module.exports = router;
