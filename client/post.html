@@ -33,32 +33,33 @@
     <article class="m-5">
         <section>
             <h1>Add your Post</h1>
-            <img id="selectedImg" src="https://www.tattooforaweek.com/files/modules/products/4596/photos/detail_the-smiley-tattoonie.jpg?v=0" class="mt-1 mb-1">
             
-            <form id="searchForm">
-                <div class="input-group mb-3">
-                    <input id="searchInput" type="text" class="form-control " placeholder="Search for a gifs"
-                           aria-label="Recipient's username"
-                           aria-describedby="button-addon2"
-                           maxlength="60">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" id="searchButton">Search</button>
-                    </div>
-                </div>
-            </form>
             
             <div class="loader-wrapper">
-                <div class="lds-circle"><div></div></div>
+              <div class="lds-circle"><div></div></div>
             </div>
             
-            <form id="newPost">
-                <!-- To be filled with GIPHY results -->
-                    <div id="inner"></div>
-                    <input type="text" class="addPost form-control" name="message" id="title" placeholder="Add your Title... (40 max characters)" maxlength="40"/>
-                    <textarea cols="50" rows="10" class="addPost form-control" name="body" id="message" placeholder="Write your post here... (500 max characters)" maxlength="500" ></textarea>
-                    <input type="submit" class="btn btn-warning" name="submit" value="Post">
+            <form id="searchForm">
+              <div class="input-group mb-3">
+                <input id="searchInput" type="text" class="form-control " placeholder="Search for a gifs"
+                aria-label="Recipient's username"
+                aria-describedby="button-addon2"
+                maxlength="60">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" id="searchButton">Search</button>
+                </div>
+              </div>
             </form>
-        
+            
+            <form id="newPost">
+              <!-- To be filled with GIPHY results -->
+              <img id="selectedImg" src="https://www.tattooforaweek.com/files/modules/products/4596/photos/detail_the-smiley-tattoonie.jpg?v=0" class="mt-1 mb-1">
+              <input type="text" class="addPost form-control" name="message" id="title" placeholder="Add your Title... (40 max characters)" maxlength="40"/>
+              <textarea cols="50" rows="10" class="addPost form-control" name="body" id="message" placeholder="Write your post here... (500 max characters)" maxlength="500" ></textarea>
+              <input type="submit" class="btn btn-warning" name="submit" value="Post">
+            </form>
+            
+            <div id="inner"></div>
             
         </section>
 
