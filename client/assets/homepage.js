@@ -143,7 +143,6 @@ const fillPost = data => {
     }
 }
 
-
 const events = data => {
 
     for (let entry of data) {
@@ -182,10 +181,6 @@ const events = data => {
         }
 
 }
-}
-
-
-const events = data => {
 
     for (let entry of data) {
     let viewComments = document.getElementById(`${entry.id}`)
