@@ -1,52 +1,61 @@
-const viewComments = document.querySelector('#viewComments');
-const newComment = document.querySelector('#form');
-const commentSection = document.querySelector('.commentSection');
 
-viewComments.addEventListener('click', searchResults);
-newComment.addEventListener('submit', addingComment);
+// const newComment = document.querySelector('#form');
+// const commentSection = document.querySelector('.commentSection');
 
-function searchResults(e, id){
-    commentSection.innerHTML = ""
-    e.preventDefault();
-    id = 3;
-    // const classes = ['card', 'card-body'];
-    // element.classList.add(...list);
-    fetch(`http://localhost:3000/data/${id}/comments`)
-        .then(res => res.json())
-        .then(res => {
-            for (const comment in res) {
-                const element = res[comment];
-                let addComments = document.createElement('div');
-                addComments.classList.add('card', 'card-body');
-                addComments.textContent = element;
-                commentSection.appendChild(addComments);
-            }
-        });
-};
+// document.addEventListener("DOMContentLoaded", getId);
+// // viewComments.addEventListener('click', searchResults);
+// newComment.addEventListener('submit', addingComment);
+// // viewComments.addEventListener('mouseover', getId)
 
-function addingComment(e, id){
-    e.preventDefault();
+// function getId (e) {
+//     e.preventDefault();
+//     fetch(`http://localhost:3000/data`)
+//     .then(res => { return res.json()})
+//     .then(data => console.log(data[0]))
+//     // .then(res => console.log(viewComments))
+// }
 
-    const comment = {
-        comments: e.target.message.value
-    }
+// function searchResults(e, id){
+//     commentSection.innerHTML = ""
+//     e.preventDefault();
+//     // const classes = ['card', 'card-body'];
+//     // element.classList.add(...list);
+//     fetch(`http://localhost:3000/data/${id}/comments`)
+//         .then(res => res.json())
+//         .then(res => {
+//             for (const comment in res) {
+//                 const element = res[comment];
+//                 let addComments = document.createElement('div');
+//                 addComments.classList.add('card', 'card-body');
+//                 addComments.textContent = element;
+//                 commentSection.appendChild(addComments);
+//             }
+//         });
+// };
 
-    console.log(comment)
+// function addingComment(e, id){
+//     e.preventDefault();
 
-    const options = {
-        method: 'POST',
-        body: JSON.stringify(comment),
-        header: {
-            "Content-Type" : "application/json"
-        }
-    }
+//     const comment = {
+//         comments: e.target.message.value
+//     }
 
-    console.log(options.body);
+//     console.log(comment)
 
-    id = 3;
+//     const options = {
+//         method: 'POST',
+//         body: JSON.stringify(comment),
+//         header: {
+//             "Content-Type" : "application/json"
+//         }
+//     }
 
-    fetch(`http://localhost:3000/data/${id}/comments`, options)
-    .then(res => res.json())
-    .catch(console.warn);
-}
+//     console.log(options.body);
+
+    
+    
+//     fetch(`http://localhost:3000/data/${id}/comments`, options)
+//     .then(res => res.json())
+//     .catch(console.warn);
+// }
 
