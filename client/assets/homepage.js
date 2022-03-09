@@ -1,8 +1,7 @@
 
 
-
-document.addEventListener("DOMContentLoaded", fill)
-//unsure if this is correct
+//pulls from database
+document.addEventListener("DOMContentLoaded", fill);
 function fill() {
     try {
         fetch('http://localhost:3000/data')
@@ -26,7 +25,7 @@ function fill() {
 
 
 
-// put results from database into homepage - unsure how to link
+// put results from database into homepage 
 
 const fillPost = data => {
 
@@ -111,4 +110,31 @@ const fillPost = data => {
 
     }
 }
+
+
+
+// // emoji like counter
+
+// //add on click event for each emoji
+// //ensure matches id of post
+// //toggle emoji count (if else)
+// //
+
+
+// emojis.forEach(element => {
+//     emojis.append(element)
+// })
+
+
+
+
+
+let button = document.getElementById("button1"),
+count = 0;
+button.onclick = function(e) {
+    e.preventDefault()
+    count += 1;
+    button.innerHTML = ":) " + count;
+    console.log(button.innerHTML)
+};
 
