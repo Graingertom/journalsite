@@ -8,6 +8,9 @@ class Journal {
         this.title = data.title;
         this.body = data.body; 
         this.image = data.image;
+        this.button1 = data.button1
+        this.button2 = data.button2
+        this.button3 = data.button3
         this.comments = data.comments
     }
 
@@ -34,6 +37,15 @@ class Journal {
         const newPost = new Journal({ id: newPostID, ...data });
         journalData.push(newPost);
         return newPost;
+    }
+
+
+    static createComment(id, data) {
+        const postID = journalData.find(postData => postData.id === id);
+        const post = new Journal(postID);
+        journalData[id - 1].comments.push(data.comments);
+        console.log(journalData);
+        return post;
     }
 
 }
