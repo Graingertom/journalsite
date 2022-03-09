@@ -45,4 +45,11 @@ router.post("/:id/comments", (req, res) => {
     res.status(201).send(newSelectedPost.comments);
 });
 
+router.post("/:id/button1", (req, res) => {
+    let data = req.body;
+    const id = parseInt(req.params.id);
+    const newSelectedPost = Journal.emoji1(id, data);
+    res.status(201).send(newSelectedPost)
+});
+
 module.exports = router;
