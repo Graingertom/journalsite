@@ -32,6 +32,18 @@ router.get('/:id/comments', (req, res) => {
     }
 });
 
+router.get("/:id/button1", (req, res) => {
+    try {
+        const id = parseInt(req.params.id);
+        const selectedPost = Journal.findById(id);
+        console.log(selectedPost)
+        res.status(200);
+    } catch (err) {
+        console.log(err);
+        res.status(404).send(err);
+    }
+});
+
 router.post("/", (req, res) => {
     const data = req.body;
     const newPost = Journal.create(data);
