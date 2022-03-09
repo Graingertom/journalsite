@@ -12,7 +12,7 @@
     defer></script>
   <link rel="stylesheet" href="assets/style.css">
   <script src="assets/script.js" defer></script>
-  <script src="assets/homepage.js" defer></script> 
+  <script src="assets/homepage.js" defer></script>
   <!-- Add Favicon -->
   <title>Coding Cats</title>
 </head>
@@ -40,7 +40,7 @@
     </div>
   </header>
 
-  
+
 
   <article class="posts">
     <h2 class="postTitle">Title</h2>
@@ -54,9 +54,13 @@
     <section class="interactiveComments">
       <form id="form">
         <input type="text" class="addComment" name="message" id="message" placeholder="Add your comment" />
-        <input type="button" class="button" name="" value=":)" onclick="check()">
-        <input type="button" class="button" name="" value=":(" onclick="check()">
-        <input type="button" class="button" name="" value=":O" onclick="check()">
+        <div class="emojis">
+          <button class="button" id="button1" name="" value="0">:)</button>
+          <button class="button" id="button2" name="" value="0">:(</button>
+          <button class="button" id="button3" name="" value="0">:O</button>
+          <!-- <input type="button" class="button" id="button2" name="" value=":(" onclick="check()">
+          <input type="button" class="button" id="button3" name="" value=":O" onclick="check()"> -->
+        </div>
         <input type="submit" class="submitBtn" name="submit" value="Comment">
       </form>
     </section>
@@ -73,8 +77,8 @@
 
       </section>
     </div>
-  </section>
-</article>
+    </section>
+  </article>
 
   <footer>
 
