@@ -62,11 +62,13 @@ const fillPost = data => {
         
         // Dynamically create the id where necessary for elements
         commentSction.id = `${entry.id} + commentSection`
+        // commentSction.className = "collapse"
         commentBtn.id = `${entry.id}`
         form.id = `${entry.id} + form`
         img.id = `${entry.id} + image`
 
         // adding in the attributes that come from bootstrap
+        img.className = "sizingImg"
         commentBtn.className = "btn btn2 btn-dark viewComs viewComments"
         commentBtn.type = "button"
         commentBtn.setAttribute('data-bs-toggle', "collapse")
@@ -83,6 +85,7 @@ const fillPost = data => {
         commentText.placeholder = "Add your comment"
 
         // setting the attributes for the submit button, emoji buttons and their children
+        commentText.setAttribute("maxlength", "120")
         button1.id = `button1`
         button1.className = "button"
         button1Text.id = `${entry.id} + button1text`
@@ -96,26 +99,26 @@ const fillPost = data => {
         
         
         // dynamically styling the emoji buttons
-        button1.src = "https://cdn.shopify.com/s/files/1/1061/1924/products/Emoji_Icon_-_Smiling_grande.png?v=1571606089"
+        submitBtn.className = "submitBtn btn btn-light"
+
+
+        commentText.placeholder = "Add your comment (120 max character)"
+        button1.src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/thumbs-up_1f44d.png"
         button1.style.width = "30px"
         button1.style.height = "30px"
-        button2.src = "https://cdn.shopify.com/s/files/1/1061/1924/products/Very_sad_emoji_icon_png_grande.png?v=1571606089"
+        button2.src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/thumbs-down_1f44e.png"
         button2.style.width = "30px"
         button2.style.height = "30px"
-        button3.src = "https://www.clipartmax.com/png/middle/86-869267_3-pack-heart-eyes-emoji-love-eyes-emoji.png"
+        button3.src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/smiling-face-with-heart-eyes_1f60d.png"
         button3.style.width = "30px"
         button3.style.height = "30px"
         
-
-
         // adding each element to the page 
         body.appendChild(article) // adds the article that everything sits in
         article.appendChild(h2) // adds the h2 tag to the article
         article.appendChild(section1) // adds the first section within the article
         article.appendChild(section2) // adds the second section within the article
         article.appendChild(div) // adds the div that sits in the article
-        
-        
         h2.appendChild(postTitle); // adds the title of the posted post to the h2 tag
         section1.appendChild(img) // adds the selected GIF to section 1
         section1.appendChild(p) // adds the post body to section 1
