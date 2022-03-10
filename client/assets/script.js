@@ -26,21 +26,21 @@ const events = data => {
 
         // Gets buttons to add to DB on click / struggle to get display to change
         button1 = document.getElementById(`button1`)
-//         button2 = document.getElementById(`${entry.id} + button2`)
-//         button3 = document.getElementById(`${entry.id} + button3`)
-//         button1Text = document.getElementById(`${entry.id} + button1text`)
+// //         button2 = document.getElementById(`${entry.id} + button2`)
+// //         button3 = document.getElementById(`${entry.id} + button3`)
+// //         button1Text = document.getElementById(`${entry.id} + button1text`)
 
         button1.addEventListener('click', increaseCount1)
-//         // button1.addEventListener('click', displayNumber)
+// //         // button1.addEventListener('click', displayNumber)
 
         
-//         // button2.addEventListener('click', increaseCount2)
-//         // button3.addEventListener('click', increaseCount3)
+// //         // button2.addEventListener('click', increaseCount2)
+// //         // button3.addEventListener('click', increaseCount3)
 
         function increaseCount1 (e, id) {
             e.preventDefault()
             id = entry.id
-            // count = entry.button1
+            count = entry.button1
             
             const numberData = {
                 button1: count
