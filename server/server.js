@@ -7,7 +7,7 @@ const path = require('path');
 app.use(cors());
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname, '../client')));
+app.use(express.static(path.join(__dirname, 'server')));
 
 const journalRoutes = require("./controller/journalController")
 app.use('https://fpjournaling.herokuapp.com', journalRoutes)
