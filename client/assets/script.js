@@ -1,4 +1,3 @@
-//pulls from database
 document.addEventListener("DOMContentLoaded", fill);
 function fill() {
     try {
@@ -19,28 +18,24 @@ function fill() {
 
 }
 
-// creates events for each entry in the database
 const events = data => {
 
     for (let entry of data) {
-
-        // Gets buttons to add to DB on click / struggle to get display to change
-        button1 = document.getElementById(`button1`)
-// //         button2 = document.getElementById(`${entry.id} + button2`)
-// //         button3 = document.getElementById(`${entry.id} + button3`)
-// //         button1Text = document.getElementById(`${entry.id} + button1text`)
+        button1 = document.getElementById(`${entry.id} + button1`)
+        button2 = document.getElementById(`${entry.id} + button2`)
+        button3 = document.getElementById(`${entry.id} + button3`)
 
         button1.addEventListener('click', increaseCount1)
-// //         // button1.addEventListener('click', displayNumber)
+        button2.addEventListener('click', increaseCount2)
+        button3.addEventListener('click', increaseCount3)
 
-        
-// //         // button2.addEventListener('click', increaseCount2)
-// //         // button3.addEventListener('click', increaseCount3)
-
-        function increaseCount1 (e, id) {
+        function increaseCount1 (e) {
             e.preventDefault()
-            id = entry.id
-            count = entry.button1
+            let count = e.target.nextSibling.textContent
+            count++
+            e.target.nextSibling.textContent = count
+            
+              
             
             const numberData = {
                 button1: count
@@ -54,22 +49,73 @@ const events = data => {
                 }
             };
             
-            fetch(`http://localhost:3000/data/${id}/button1`, options)
-            .then(r => console.log(r.json()))
+            fetch(`http://localhost:3000/data/${entry.id}/button1`, options)
+            .then(r => r.json())
             .catch(console.warn)
+        
         }
 
+        function increaseCount2 (e) {
+            e.preventDefault()
+            let count = e.target.nextSibling.textContent
+            count++
+            e.target.nextSibling.textContent = count
+            
+              
+            
+            const numberData = {
+                button2: count
+            };
+            
+            const options = {
+                method: 'POST',
+                body: JSON.stringify(numberData),
+                headers: {
+                    "Content-Type" : "application/json"
+                }
+            };
+            
+            fetch(`http://localhost:3000/data/${entry.id}/button2`, options)
+            .then(r => r.json())
+            .catch(console.warn)
+        
+        }
+
+        function increaseCount3 (e) {
+            e.preventDefault()
+            let count = e.target.nextSibling.textContent
+            count++
+            e.target.nextSibling.textContent = count
+            
+              
+            
+            const numberData = {
+                button3: count
+            };
+            
+            const options = {
+                method: 'POST',
+                body: JSON.stringify(numberData),
+                headers: {
+                    "Content-Type" : "application/json"
+                }
+            };
+            
+            fetch(`http://localhost:3000/data/${entry.id}/button3`, options)
+            .then(r => r.json())
+            .catch(console.warn)
+        
+        }
 }
 
     for (let entry of data) {
-    // getting dynamically created id's to add click events
+    
     let viewComments = document.getElementById(`${entry.id}`)
     viewComments.addEventListener('click', searchResults)
 
     let newComment = document.getElementById(`${entry.id} + form`);
     newComment.addEventListener('submit', addingComment);
     
-        // on click of view comments, display these comments associated with the id
     function searchResults(e, id){
         id = entry.id
         let commentSection = document.getElementById(`${id} + commentSection`)
@@ -88,10 +134,10 @@ const events = data => {
             });
     };
 
-    // on submit of comment form show the comments associated with the id
     function addingComment(e, id){
         id = entry.id
         e.preventDefault();
+        let commentSection = document.getElementById(`${id} + commentSection`)
     
         const comment = {
             comments: e.target.message.value
@@ -113,6 +159,13 @@ const events = data => {
         
         fetch(`http://localhost:3000/data/${id}/comments`, options)
         .then(res => res.json())
+        .then(res => {
+                let addComments = document.createElement('div');
+                addComments.classList.add('card', 'card-body');
+                addComments.textContent = e.target.message.value;
+                commentSection.appendChild(addComments);
+        })
+        
         .catch(console.warn);
     }
 }

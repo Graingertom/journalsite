@@ -86,7 +86,7 @@ const fillPost = data => {
 
         // setting the attributes for the submit button, emoji buttons and their children
         commentText.setAttribute("maxlength", "120")
-        button1.id = `button1`
+        button1.id = `${entry.id} + button1`
         button1.className = "button"
         button1Text.id = `${entry.id} + button1text`
         button2.id = `${entry.id} + button2`
