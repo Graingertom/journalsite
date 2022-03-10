@@ -10,7 +10,10 @@ function submitForm (e) {
         title: e.target.title.value,
         body: e.target.body.value,
         image: e.target.children[0].currentSrc,
-        comments: [],
+        button1: 0,
+        button2: 0,
+        button3: 0,
+        comments: []
     };
 
     const options = {
