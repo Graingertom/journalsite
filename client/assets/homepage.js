@@ -67,6 +67,7 @@ const fillPost = data => {
         commentBtn.id = `${entry.id}`
         form.id = `${entry.id} + form`
         img.id = `${entry.id} + image`
+        img.className = "sizingImg"
         commentBtn.className = "btn btn2 btn-dark viewComs viewComments"
         commentBtn.type = "button"
         commentBtn.setAttribute('data-bs-toggle', "collapse")
@@ -77,6 +78,7 @@ const fillPost = data => {
 
 
         commentText.className = "addComment"
+        commentText.setAttribute("maxlength", "120")
         button1.id = `button1`
         button1.className = "button"
         button1Text.id = `${entry.id} + button1text`
@@ -85,7 +87,7 @@ const fillPost = data => {
         button3.id = `${entry.id} + button3`
         button3.className = "button"
         submitBtn.type = "submit"
-        submitBtn.className = "submitBtn"
+        submitBtn.className = "submitBtn btn btn-warning"
 
 
 
@@ -93,14 +95,14 @@ const fillPost = data => {
         commentText.class = "addComment"
         commentText.name = "message"
         commentText.id = "message"
-        commentText.placeholder = "Add your comment"
-        button1.src = "https://cdn.shopify.com/s/files/1/1061/1924/products/Emoji_Icon_-_Smiling_grande.png?v=1571606089"
+        commentText.placeholder = "Add your comment (120 max character)"
+        button1.src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/thumbs-up_1f44d.png"
         button1.style.width = "30px"
         button1.style.height = "30px"
-        button2.src = "https://cdn.shopify.com/s/files/1/1061/1924/products/Very_sad_emoji_icon_png_grande.png?v=1571606089"
+        button2.src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/thumbs-down_1f44e.png"
         button2.style.width = "30px"
         button2.style.height = "30px"
-        button3.src = "https://www.clipartmax.com/png/middle/86-869267_3-pack-heart-eyes-emoji-love-eyes-emoji.png"
+        button3.src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/smiling-face-with-heart-eyes_1f60d.png"
         button3.style.width = "30px"
         button3.style.height = "30px"
         submitBtn.type = "submit"
@@ -180,7 +182,7 @@ const events = data => {
             .catch(console.warn)
         }
 
-}
+    }
 
     for (let entry of data) {
     let viewComments = document.getElementById(`${entry.id}`)
