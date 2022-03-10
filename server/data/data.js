@@ -2,7 +2,7 @@ let posts = [
     {
         id: 1,
         title: "Lemons float, but limes sink",
-        body: "Because limes are denser than lemons, they drop to the bottom of a glass, while lemons float at the top.Out of all these random fun facts, this one’s been in front of our faces (or rather, in our glasses) this whole time! Check out these other things to wonder about that you likely never thought of before.",
+        body: "Because limes are denser than lemons, they drop to the bottom of a glass, while lemons float at the top. Out of all these random fun facts, this one’s been in front of our faces (or rather, in our glasses) this whole time! Check out these other things to wonder about that you likely never thought of before.",
         image: "https://media1.giphy.com/media/xT0GqjBCkO9BEiSEOk/giphy.gif?cid=b9d36a782ownxmygoykokf1j97hw4dpqehfrrzz6639pglyt&rid=giphy.gif&ct=g",
         button1: 1,
         button2: 3,
