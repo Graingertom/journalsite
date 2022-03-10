@@ -64,6 +64,7 @@ const fillPost = data => {
         div.className = "d-grid gap-4 col-3 mx-auto"
 
         commentSction.id = `${entry.id} + commentSection`
+        // commentSction.className = "collapse"
         commentBtn.id = `${entry.id}`
         form.id = `${entry.id} + form`
         img.id = `${entry.id} + image`
@@ -87,7 +88,7 @@ const fillPost = data => {
         button3.id = `${entry.id} + button3`
         button3.className = "button"
         submitBtn.type = "submit"
-        submitBtn.className = "submitBtn btn btn-warning"
+        submitBtn.className = "submitBtn btn btn-light"
 
 
 
