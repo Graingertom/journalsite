@@ -144,3 +144,5 @@ const fillPost = data => {
 
     }
 }
+
+module.exports = { fillPost }

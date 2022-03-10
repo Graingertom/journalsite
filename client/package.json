@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "jest --watchAll --env=jsdom",
-    "coverage": "jest --coverage --env=jsdom"
+    "coverage": "jest --coverage --watchAll --env=jsdom"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "@giphy/js-fetch-api": "^4.1.2",
     "browserify": "^17.0.0",
     "cors": "^2.8.5",
-    "jest": "^27.5.1"
+    "jest": "^27.5.1",
+    "jest-fetch-mock": "^3.0.3"
   }
 }

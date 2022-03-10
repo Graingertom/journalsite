@@ -55,7 +55,16 @@ describe('index.html', () => {
         })
 
         //Article testing
-        
-    })
+        test('it has an article to be filled', () => {
+            let newArticle = document.querySelector('.newPost');
+            expect(newArticle).toBeTruthy();
+        })
 
-});
+        test('it has a div to be filled', () => {
+            let newPostContent = document.querySelector('.postContent');
+            expect(newPostContent).toBeTruthy();
+        })
+    })
+})
+
+
