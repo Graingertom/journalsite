@@ -118,7 +118,8 @@ const events = data => {
     
     function searchResults(e, id){
         id = entry.id
-        let commentSection = document.getElementById(`${id} + commentSection`)
+        console.log(e)
+        let commentSection = e.target.nextSibling
         e.preventDefault();
         commentSection.innerHTML = ""
         fetch(`http://localhost:3000/data/${id}/comments`)
@@ -137,7 +138,8 @@ const events = data => {
     function addingComment(e, id){
         id = entry.id
         e.preventDefault();
-        let commentSection = document.getElementById(`${id} + commentSection`)
+        console.log(e)
+        let commentSection = document.getElementById(`collapseExample`)
     
         const comment = {
             comments: e.target.message.value

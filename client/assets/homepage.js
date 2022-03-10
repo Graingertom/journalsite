@@ -61,7 +61,8 @@ const fillPost = data => {
         div.className = "d-grid gap-4 col-3 mx-auto"
         
         // Dynamically create the id where necessary for elements
-        commentSction.id = `${entry.id} + commentSection`
+        commentSction.id = `collapseExample`
+        commentSction.className = "collapse"
         // commentSction.className = "collapse"
         commentBtn.id = `${entry.id}`
         form.id = `${entry.id} + form`
