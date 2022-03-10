@@ -24,8 +24,38 @@ describe('index.html', () => {
         })
     })
 
-    // describe('body', () => {
+    describe('body', () => {
+        //Testing Header
+        test('has a header', () => {
+            expect(document.querySelector('header')).toBeTruthy();
+        })
+
+        test('it has a header title', () => {
+            let header = document.querySelector('header');
+            expect(header.textContent).toContain('Coding Cats');
+        })
+
+        test('it has a new post button', () => {
+            let postButton = document.getElementsByClassName('btn btn-light');
+            expect(postButton).toBeTruthy();
+        })
+
+        //Testing the section banner
+        test('the welcoming text in the section banner', () => {
+            let banner = document.querySelector('.banner');
+            expect(banner.textContent).toContain('Welcome to the');
+            expect(banner.textContent).toContain('Coding Cats');
+            expect(banner.textContent).toContain('blogpage!');
+            expect(banner.textContent).toContain('write a post');
+        })
+
+        test('it has a new post button', () => {
+            let postButton = document.getElementsByClassName('btn btn-light');
+            expect(postButton).toBeTruthy();
+        })
+
+        //Article testing
         
-    // })
+    })
 
 });

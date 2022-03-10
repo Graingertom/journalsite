@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1646907528554" clover="3.2.0">
-  <project timestamp="1646907528554" name="All files">
-    <metrics statements="92" coveredstatements="74" conditionals="0" coveredconditionals="0" methods="19" coveredmethods="15" elements="111" coveredelements="89" complexity="0" loc="92" ncloc="92" packages="4" files="4" classes="4"/>
+<coverage generated="1646908514403" clover="3.2.0">
+  <project timestamp="1646908514403" name="All files">
+    <metrics statements="92" coveredstatements="76" conditionals="0" coveredconditionals="0" methods="19" coveredmethods="15" elements="111" coveredelements="91" complexity="0" loc="92" ncloc="92" packages="4" files="4" classes="4"/>
     <package name="server">
       <metrics statements="14" coveredstatements="14" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
       <file name="server.js" path="/Users/HenryDang/Documents/futureproof/week4/journaling/server/server.js">
@@ -23,9 +23,9 @@
       </file>
     </package>
     <package name="server.controller">
-      <metrics statements="45" coveredstatements="32" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="5"/>
+      <metrics statements="45" coveredstatements="34" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="5"/>
       <file name="journalController.js" path="/Users/HenryDang/Documents/futureproof/week4/journaling/server/controller/journalController.js">
-        <metrics statements="45" coveredstatements="32" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="5"/>
+        <metrics statements="45" coveredstatements="34" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
@@ -41,13 +41,13 @@
         <line num="18" count="1" type="stmt"/>
         <line num="19" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
-        <line num="26" count="1" type="stmt"/>
+        <line num="24" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="26" count="2" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
-        <line num="30" count="0" type="stmt"/>
-        <line num="31" count="0" type="stmt"/>
+        <line num="30" count="1" type="stmt"/>
+        <line num="31" count="1" type="stmt"/>
         <line num="35" count="1" type="stmt"/>
         <line num="36" count="0" type="stmt"/>
         <line num="37" count="0" type="stmt"/>
@@ -86,7 +86,7 @@
       <file name="journalModel.js" path="/Users/HenryDang/Documents/futureproof/week4/journaling/server/model/journalModel.js">
         <metrics statements="31" coveredstatements="26" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="8"/>
         <line num="2" count="2" type="stmt"/>
-        <line num="7" count="19" type="stmt"/>
+        <line num="7" count="20" type="stmt"/>
         <line num="8" count="17" type="stmt"/>
         <line num="9" count="17" type="stmt"/>
         <line num="10" count="17" type="stmt"/>
@@ -96,11 +96,11 @@
         <line num="14" count="17" type="stmt"/>
         <line num="19" count="10" type="stmt"/>
         <line num="21" count="2" type="stmt"/>
-        <line num="25" count="6" type="stmt"/>
-        <line num="26" count="17" type="stmt"/>
-        <line num="27" count="6" type="stmt"/>
+        <line num="25" count="7" type="stmt"/>
+        <line num="26" count="23" type="stmt"/>
+        <line num="27" count="7" type="stmt"/>
         <line num="29" count="4" type="stmt"/>
-        <line num="31" count="2" type="stmt"/>
+        <line num="31" count="3" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
         <line num="38" count="1" type="stmt"/>

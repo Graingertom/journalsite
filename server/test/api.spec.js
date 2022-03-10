@@ -41,6 +41,11 @@ describe('API server', () => {
         request(api).get('/data/1/comments').expect(200, done);
     });
 
+    // Needs to be fixed in controller
+    // it('responds to get /data/:id/button1 with status 200', (done) => {
+    //     request(api).get('/data/1/button1').expect(200, done);
+    // });
+
     it('responds to post /data with status 201', (done) => {
         request(api)
             .post('/data')
@@ -77,6 +82,10 @@ describe('API server', () => {
 
     it('responds to a unknown post id with a 404', (done) => {
         request(api).get('/data/42').expect(404).expect({}, done);
+    });
+
+    it('responds to a unknown post id comment with a 404', (done) => {
+        request(api).get('/data/99/comments').expect(404).expect({}, done);
     });
 
     it('responds to non existing paths with 404', (done) => {
