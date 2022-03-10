@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, '../client')));
 
 const journalRoutes = require("./controller/journalController")
-app.use('https://fpjournaling.com', journalRoutes)
+app.use('https://fpjournaling.herokuapp.com', journalRoutes)
 
 app.get('/', (req, res) => res.send('../client/index.html'));
 
