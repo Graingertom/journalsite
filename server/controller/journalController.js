@@ -64,4 +64,18 @@ router.post("/:id/button1", (req, res) => {
     res.status(201).send(newSelectedPost)
 });
 
+router.post("/:id/button2", (req, res) => {
+    let data = req.body;
+    const id = parseInt(req.params.id);
+    const newSelectedPost = Journal.emoji2(id, data);
+    res.status(201).send(newSelectedPost)
+});
+
+router.post("/:id/button3", (req, res) => {
+    let data = req.body;
+    const id = parseInt(req.params.id);
+    const newSelectedPost = Journal.emoji3(id, data);
+    res.status(201).send(newSelectedPost)
+});
+
 module.exports = router;

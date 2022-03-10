@@ -55,23 +55,21 @@ class Journal {
         return post;
     }
 
+    static emoji2(id, data) {
+        const postID = journalData.find(postData => postData.id === id);
+        const post = new Journal(postID);
+        journalData[id - 1].button2++;
+        console.log(journalData);
+        return post;
+    }
 
-
-
-//emoji
-
-    // static emoji1(id, data) {
-    //     const postID = journalData.find(postData => postData.id === id);
-    //     const post = new Journal(postID);
-    //     journalData[id -1].button1.push(data.button1)
-    //     console.log(journalData)
-    //     return post
-    // }
-
-    
-
-
-    
+    static emoji3(id, data) {
+        const postID = journalData.find(postData => postData.id === id);
+        const post = new Journal(postID);
+        journalData[id - 1].button3++;
+        console.log(journalData);
+        return post;
+    }
 }
 
 
