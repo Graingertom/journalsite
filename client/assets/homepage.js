@@ -10,7 +10,6 @@ function fill() {
                 console.log(data)
                 document.getElementById("toShow").innerHTML = ""
                 fillPost(data)
-                events(data)
             })
 
     }
@@ -25,10 +24,9 @@ function fill() {
 const fillPost = data => {
 
     for (let entry of data) {
+        // Create elements that need to be repeated for each entry in the database
         const article = document.createElement("article")
-        // const section = document.getElementById("toShow");
         const h2 = document.createElement("h2");
-        //const img = document.createElement("img");    // This path needs to be for the gif ?? not part of the p?
         const p = document.createElement("p");
         const img = document.createElement("img")
         const section1 = document.createElement("section")
@@ -42,32 +40,34 @@ const fillPost = data => {
         const button2Text = document.createElement("span")
         const button3Text = document.createElement("span")
         const submitBtn = document.createElement("input")
-        //const h3 = document.createElement("h3") //to change
         const div = document.createElement("div")
         const commentBtn = document.createElement("button")
         const commentSction = document.createElement("div")
         const body = document.querySelector("body")
 
+        // Create text nodes that fill parts with the necessary information
         const button1Number = document.createTextNode(`${entry.button1}`)
         const button2Number = document.createTextNode(`${entry.button2}`)
         const button3Number = document.createTextNode(`${entry.button3}`)
         const postTitle = document.createTextNode(`${entry.title}`);
         const textContent = document.createTextNode(`${entry.body}`);
         const comments = document.createTextNode("View Comments");
-        // or add gif choice here?
 
+        // dynamically create the classes for the elements
         article.className = "posts"
         h2.className = "postTitle"
         section1.className = "textContent"
         section2.className = "interactiveComments"
-
         div.className = "d-grid gap-4 col-3 mx-auto"
-
+        
+        // Dynamically create the id where necessary for elements
         commentSction.id = `${entry.id} + commentSection`
         // commentSction.className = "collapse"
         commentBtn.id = `${entry.id}`
         form.id = `${entry.id} + form`
         img.id = `${entry.id} + image`
+
+        // adding in the attributes that come from bootstrap
         img.className = "sizingImg"
         commentBtn.className = "btn btn2 btn-dark viewComs viewComments"
         commentBtn.type = "button"
@@ -76,9 +76,15 @@ const fillPost = data => {
         commentBtn.setAttribute('aria-expanded', "false")
         commentBtn.setAttribute('aria-controls', "collapseExample")
 
-
-
+        // adding in the attributes for the comment button text
         commentText.className = "addComment"
+        commentText.type = "text"
+        commentText.class = "addComment"
+        commentText.name = "message"
+        commentText.id = "message"
+        commentText.placeholder = "Add your comment"
+
+        // setting the attributes for the submit button, emoji buttons and their children
         commentText.setAttribute("maxlength", "120")
         button1.id = `button1`
         button1.className = "button"
@@ -88,14 +94,14 @@ const fillPost = data => {
         button3.id = `${entry.id} + button3`
         button3.className = "button"
         submitBtn.type = "submit"
+        submitBtn.className = "submitBtn"
+        submitBtn.value = "Comment"
+        
+        
+        // dynamically styling the emoji buttons
         submitBtn.className = "submitBtn btn btn-light"
 
 
-
-        commentText.type = "text"
-        commentText.class = "addComment"
-        commentText.name = "message"
-        commentText.id = "message"
         commentText.placeholder = "Add your comment (120 max character)"
         button1.src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/thumbs-up_1f44d.png"
         button1.style.width = "30px"
@@ -106,196 +112,35 @@ const fillPost = data => {
         button3.src = "https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/smiling-face-with-heart-eyes_1f60d.png"
         button3.style.width = "30px"
         button3.style.height = "30px"
-        submitBtn.type = "submit"
-        submitBtn.value = "Comment"
-        //gif
+        
+        // adding each element to the page 
+        body.appendChild(article) // adds the article that everything sits in
+        article.appendChild(h2) // adds the h2 tag to the article
+        article.appendChild(section1) // adds the first section within the article
+        article.appendChild(section2) // adds the second section within the article
+        article.appendChild(div) // adds the div that sits in the article
+        h2.appendChild(postTitle); // adds the title of the posted post to the h2 tag
+        section1.appendChild(img) // adds the selected GIF to section 1
+        section1.appendChild(p) // adds the post body to section 1
+        p.appendChild(textContent) // fills the post body with the posted text
+        commentBtn.appendChild(comments) //to change?????
+        section2.appendChild(form) // adds the comments form to section 2
+        form.appendChild(commentText) // adds the input to type comments to the form
+        section2.appendChild(button1) // adds the emoji button 1 to the section
+        section2.appendChild(button1Text) // adds the text associated with emoji button 1 to the section
+        button1Text.appendChild(button1Number) // fills the button 1 text
+        section2.appendChild(button2) // adds the emoji button 2 to the section
+        section2.appendChild(button2Text) // adds the text associated with emoji button 2 to the section
+        button2Text.appendChild(button2Number) // fills the button 2 text
+        section2.appendChild(button3) // adds the emoji button 3 to the section
+        section2.appendChild(button3Text) // adds the text associated with emoji button 3 to the section
+        button3Text.appendChild(button3Number) // fills the button 3 text
+        form.appendChild(submitBtn) // adds the submit button for the comments to the form
+        div.appendChild(commentBtn) // adds the view comments button to the div at the end of the article
+        div.appendChild(commentSction) // adds the drop down comments section to the div at the end of the article
+        img.src = `${entry.image}` // uses the selected gif from the post to display on the image
 
 
-
-        body.appendChild(article)
-        h2.appendChild(postTitle);
-        // //img.appendChild() Surely the Gif is part of the text content ??
-        section1.appendChild(img)
-        section1.appendChild(p)
-        p.appendChild(textContent)
-        commentBtn.appendChild(comments) //to change
-        section2.appendChild(form)
-        form.appendChild(commentText)
-        section2.appendChild(button1)
-        section2.appendChild(button1Text)
-        button1Text.appendChild(button1Number)
-        section2.appendChild(button2)
-        section2.appendChild(button2Text)
-        button2Text.appendChild(button2Number)
-        section2.appendChild(button3)
-        section2.appendChild(button3Text)
-        button3Text.appendChild(button3Number)
-        form.appendChild(submitBtn)
-        div.appendChild(commentBtn)
-        div.appendChild(commentSction)
-        img.src = `${entry.image}`
-
-
-
-
-        article.appendChild(h2)
-        article.appendChild(section1)
-        article.appendChild(section2)
-        article.appendChild(div)
 
     }
 }
-
-const events = data => {
-
-    for (let entry of data) {
-        button1 = document.getElementById(`button1`)
-//         button2 = document.getElementById(`${entry.id} + button2`)
-//         button3 = document.getElementById(`${entry.id} + button3`)
-//         button1Text = document.getElementById(`${entry.id} + button1text`)
-
-        button1.addEventListener('click', increaseCount1)
-//         // button1.addEventListener('click', displayNumber)
-
-        
-//         // button2.addEventListener('click', increaseCount2)
-//         // button3.addEventListener('click', increaseCount3)
-
-        function increaseCount1 (e, id) {
-            e.preventDefault()
-            id = entry.id
-            // count = entry.button1
-            
-            const numberData = {
-                button1: count
-            };
-            
-            const options = {
-                method: 'POST',
-                body: JSON.stringify(numberData),
-                headers: {
-                    "Content-Type" : "application/json"
-                }
-            };
-            
-            fetch(`http://localhost:3000/data/${id}/button1`, options)
-            .then(r => console.log(r.json()))
-            .catch(console.warn)
-        }
-
-    }
-
-    for (let entry of data) {
-    let viewComments = document.getElementById(`${entry.id}`)
-    viewComments.addEventListener('click', searchResults)
-
-    let newComment = document.getElementById(`${entry.id} + form`);
-    newComment.addEventListener('submit', addingComment);
-    
-
-    function searchResults(e, id){
-        id = entry.id
-        let commentSection = document.getElementById(`${id} + commentSection`)
-        e.preventDefault();
-        commentSection.innerHTML = ""
-        // const classes = ['card', 'card-body'];
-        // element.classList.add(...list);
-        fetch(`http://localhost:3000/data/${id}/comments`)
-            .then(res => res.json())
-            .then(res => {
-                for (const comment in res) {
-                    const element = res[comment];
-                    let addComments = document.createElement('div');
-                    addComments.classList.add('card', 'card-body');
-                    addComments.textContent = element;
-                    commentSection.appendChild(addComments);
-                }
-            });
-    };
-
-    function addingComment(e, id){
-        id = entry.id
-        e.preventDefault();
-    
-        const comment = {
-            comments: e.target.message.value
-        }
-    
-        console.log(comment)
-    
-        const options = {
-            method: 'POST',
-            body: JSON.stringify(comment),
-            headers: {
-                "Content-Type" : "application/json"
-            }
-        }
-    
-        console.log(options.body);
-    
-        
-        
-        fetch(`http://localhost:3000/data/${id}/comments`, options)
-        .then(res => res.json())
-        .catch(console.warn);
-    }
-}
-}
-
-
-// // emoji like counter
-
-// //add on click event for each emoji
-// //ensure matches id of post
-// //toggle emoji count (if else)
-// //
-
-
-// fetch('http://localhost:3000/data/${id}/button1')
-//     .then((res) => {
-//         res.json()
-//     })
-//     .then()
-
-
-
-
-
-
-
-
-
-
-
-// let button = document.getElementById("button1"),
-// count = 0;
-// button.onclick = function(e) {
-//     e.preventDefault()
-//     count += 1;
-//     button.innerHTML = ":) " + count;
-//     console.log(button.innerHTML)
-// };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function addEmoji1() {
-//     emojis.addEventListener("click", () => {
-//         e.preventDefault()
-//         const id = emojis.findId(element => element.id === postData.id)
-//         count += 1;
-//         button.innerHTML = ":) " + count;
-//         console.log(button.innerHTML)
-
