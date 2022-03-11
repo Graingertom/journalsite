@@ -139,7 +139,7 @@ const events = data => {
         id = entry.id
         e.preventDefault();
         console.log(e)
-        let commentSection = document.getElementById(`collapseExample`)
+        let commentSection = document.getElementById(id).nextSibling
     
         const comment = {
             comments: e.target.message.value
