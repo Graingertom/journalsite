@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", fill);
 function fill() {
     try {
-        fetch('http://localhost:3000/data')
+        fetch('https://fpjournaling.herokuapp.com/data')
             .then((response) => {
                 return response.json()
             })
@@ -49,7 +49,7 @@ const events = data => {
                 }
             };
             
-            fetch(`http://localhost:3000/data/${entry.id}/button1`, options)
+            fetch(`https://fpjournaling.herokuapp.com/data/${entry.id}/button1`, options)
             .then(r => r.json())
             .catch(console.warn)
         
@@ -75,7 +75,7 @@ const events = data => {
                 }
             };
             
-            fetch(`http://localhost:3000/data/${entry.id}/button2`, options)
+            fetch(`https://fpjournaling.herokuapp.com/data/${entry.id}/button2`, options)
             .then(r => r.json())
             .catch(console.warn)
         
@@ -101,7 +101,7 @@ const events = data => {
                 }
             };
             
-            fetch(`http://localhost:3000/data/${entry.id}/button3`, options)
+            fetch(`https://fpjournaling.herokuapp.com/data/${entry.id}/button3`, options)
             .then(r => r.json())
             .catch(console.warn)
         
@@ -122,7 +122,7 @@ const events = data => {
         let commentSection = e.target.nextSibling
         e.preventDefault();
         commentSection.innerHTML = ""
-        fetch(`http://localhost:3000/data/${id}/comments`)
+        fetch(`https://fpjournaling.herokuapp.com/data/${id}/comments`)
             .then(res => res.json())
             .then(res => {
                 for (const comment in res) {
@@ -159,7 +159,7 @@ const events = data => {
     
         
         
-        fetch(`http://localhost:3000/data/${id}/comments`, options)
+        fetch(`https://fpjournaling.herokuapp.com/data/${id}/comments`, options)
         .then(res => res.json())
         .then(res => {
                 let addComments = document.createElement('div');

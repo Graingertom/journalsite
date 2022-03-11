@@ -8,7 +8,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const journalRoutes = require("./controller/journalController")
-app.use('/data', journalRoutes)
+app.use('https://fpjournaling.herokuapp.com/data', journalRoutes)
 
 app.get('/', (req, res) => {
     res.send('Hello World!');

@@ -26,7 +26,7 @@ function submitForm (e) {
 
     console.log(options.body)
 
-    fetch('http://localhost:3000/data', options)
+    fetch('https://fpjournaling.herokuapp.com/data', options)
         .then(r => console.log(r.json()))
         .catch(console.warn)
 }

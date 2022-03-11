@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", fill);
 function fill() {
     try {
-        fetch('http://localhost:3000/data')
+        fetch('https://fpjournaling.herokuapp.com/data')
             .then((response) => {
                 return response.json()
             })
