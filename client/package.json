@@ -1,0 +1,23 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest --watchAll --env=jsdom",
+    "coverage": "jest --coverage --watchAll --env=jsdom"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@giphy/js-fetch-api": "^4.1.2",
+    "browserify": "^17.0.0",
+    "cors": "^2.8.5",
+    "jest": "^27.5.1",
+    "jest-fetch-mock": "^3.0.3",
+    "jsdom": "^19.0.0"
+  }
+}

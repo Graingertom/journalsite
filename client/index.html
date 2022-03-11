@@ -1,15 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/homepage.js" defer></script>
     <script src="assets/script.js" defer></script>
-    <!-- Add Favicon -->
-    <title>Journal</title>
+    <script src="assets/helper.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/client/image/faviconcat.png">
+    <title>Coding Cats</title>
 </head>
+
 <body>
-    
+    <header class="p-3 bg-dark text-white">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 mx-auto justify-content-center mb-md-0">
+                    <li><a href="index.html" class="nav-link px-2 text-white" id="cFont">Coding Cats</a></li>
+                </ul>
+                <div class="text-end">
+                    <a href="post.html"><button type="button" class="btn btn-light">New Post</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="banner">
+        <div class="content">
+            <h1 class="heading">
+                <span class="small">Welcome to the </span><span class="no-fill">Coding Cats</span> <span
+                    class="small">blogpage!</span>
+            </h1>
+            <a href="post.html" class="btn2">write a post</a>
+            <p id="about">Post your favourite fun facts!</p>
+        </div>
+    </section>
+
+    <!-- <article class="posts">
+        <h2 class="postTitle">Title</h2>
+        <section class="textContent">
+            <p>Image should be here</p>
+            <p>Body</p>
+        </section>
+
+        <section class="interactiveComments">
+            <form id="form">
+                <input type="text" class="addComment" name="message" id="message" placeholder="Add your comment" />
+                <div class="emojis">
+                    <button class="button" id="button1" name="" value="0">:)</button>
+                    <button class="button" id="button2" name="" value="0">:(</button>
+                    <button class="button" id="button3" name="" value="0">:O</button>
+                </div>
+                <input type="submit" class="submitBtn" name="submit" value="Comment">
+            </form>
+            <....
+            <div class="d-grid gap-4 col-3 mx-auto">
+                <button id="viewComments" class="btn btn2 btn-dark viewComs" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    View comments
+                </button>
+            </div>
+            <div class="commentSection" class="collapse" id="collapseExample">
+                Adds comments to this div class 
+            </div>
+        </section>
+    </article>  -->
+        <!-- New post entries added to homepage -->
+
+        <article class="newPost">
+            <div class="postContent">
+                <section id="toShow">
+            </section>
+            </div>
+        </article>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous">
+            </script>
 </body>
+
+
 </html>
