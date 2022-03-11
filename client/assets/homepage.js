@@ -149,4 +149,4 @@ const fillPost = data => {
     }
 }
 
-module.exports = { fillPost }
+module.exports = { fillPost, fill }
