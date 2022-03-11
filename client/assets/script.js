@@ -25,9 +25,9 @@ const events = data => {
         button2 = document.getElementById(`${entry.id} + button2`)
         button3 = document.getElementById(`${entry.id} + button3`)
 
-        button1.addEventListener('click', increaseCount1)
-        button2.addEventListener('click', increaseCount2)
-        button3.addEventListener('click', increaseCount3)
+        button1.addEventListener('click', increaseCount1, {once : true})
+        button2.addEventListener('click', increaseCount2, {once : true})
+        button3.addEventListener('click', increaseCount3, {once : true})
 
         function increaseCount1 (e) {
             e.preventDefault()
