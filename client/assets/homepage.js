@@ -41,6 +41,7 @@ const fillPost = data => {
         const button3Text = document.createElement("span")
         const submitBtn = document.createElement("input")
         const div = document.createElement("div")
+        const containerDiv = document.createElement("div")
         const commentBtn = document.createElement("button")
         const commentSction = document.createElement("div")
         const body = document.querySelector("body")
@@ -58,6 +59,7 @@ const fillPost = data => {
         h2.className = "postTitle"
         section1.className = "textContent"
         section2.className = "interactiveComments"
+        containerDiv.className = "container"
         div.className = "d-grid gap-4 col-3 mx-auto"
         
         // Dynamically create the id where necessary for elements
@@ -119,7 +121,8 @@ const fillPost = data => {
         article.appendChild(h2) // adds the h2 tag to the article
         article.appendChild(section1) // adds the first section within the article
         article.appendChild(section2) // adds the second section within the article
-        article.appendChild(div) // adds the div that sits in the article
+        article.appendChild(containerDiv) //adding container to article
+        article.appendChild(div) // adds the div that sits in the container
         h2.appendChild(postTitle); // adds the title of the posted post to the h2 tag
         section1.appendChild(img) // adds the selected GIF to section 1
         section1.appendChild(p) // adds the post body to section 1
