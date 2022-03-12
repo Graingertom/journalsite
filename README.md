@@ -9,17 +9,17 @@ If you plan on copying this code make sure you install the following on each fil
 
 Server:
 
-npm install express
-npm install jest
-npm install body-parser
-npm install cors
+- npm install express
+- npm install jest
+- npm install body-parser
+- npm install cors
 
 Client:
 
-npm install browserify
-npm install cors
-npm install jest
-npm install jest-fetch-mock
+- npm install browserify
+- npm install cors
+- npm install jest
+- npm install jest-fetch-mock
 
 also you will need to install the giphy js-fetch-api
 
