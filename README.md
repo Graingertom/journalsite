@@ -36,6 +36,6 @@ Contact the coding cats for any of your IT support needs!
 
 ### Authors and acknowledgements
 - Heather Mcglynn
-- Henry Dang
+- Henry
 - Leanne Sobogun
 - Tom Grainger
